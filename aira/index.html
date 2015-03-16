@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block title %} IRMA System {% endblock %}
+
+{% block upper_main %}
+  <div class="jumbotron">
+    <div class="container">
+      <h3>
+      <span class="text-success">A</span>gricultural
+      <span class="text-success">IR</span>rigation
+      <span class="text-success">A</span>dvisor</h3>
+      <p>using
+        <a target = "_blank"href="http://openmeteo.org/">OpenMeteo.org</a> measurements,
+        <a target = "_blank" href="http://pthelma.readthedocs.org/en/latest/">Pthelma</a> Models,
+        <a target = "_blank"href="http://cirrus.meteo.noa.gr/forecast/bolam/index.htm">NOA</a> forecast.
+      </p>
+    </div>
+    <div class="container">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="{% static 'img/image1.jpg' %}">
+          </div>
+
+          <div class="item">
+            <img src="{% static 'img/image2.jpg' %}">
+          </div>
+
+          <div class="item">
+            <img src="{% static 'img/image3.jpg' %}">
+          </div>
+
+          <div class="item">
+            <img src="{% static 'img/image4.jpg' %}">
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <hr>
+{% endblock %}
+
+{% block main_page %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-md-6">
+          <h4>&nbsp;&nbsp;&nbsp;View historical available data</h4>
+          <div class="form-group">
+            <select onchange="create_map(document.getElementById('mirror_field').value,document.getElementById('meteo_var').value )" id="meteo_var" class="form-control">
+              <option value="Daily_rain_">Daily rainfall (mm)</option>
+              <option value="Daily_evaporation_">Daily evapotranspiration (mm)</option>
+              <option value="Daily_humidity_max_">Daily max air relevant humidity (%)</option>
+              <option value="Daily_humidity_">Daily mean air relevant humidity (%)</option>
+              <option value="Daily_humidity_min_">Daily min air relevant humidity (%)</option>
+              <option value="Daily_temperature_max_">Daily max air temperature (Celsious)</option>
+              <option value="Daily_temperature_">Daily mean air temperature (Celsious)</option>
+              <option value="Daily_temperature_min_">Daily min air temperature (Celsious)</option>
+              <option value="Daily_pressure_">Daily barometric pressure (hPa) </option>
+              <option value="Daily_solar_radiation_">Daily solar radiation (W/m^2)</option>
+            </select>
+          <div onchange="create_map(document.getElementById('mirror_field').value,document.getElementById('meteo_var').value )" style="float: left;" class="form-group">
+            <div class='input-group date' id='form_datetime'>
+                <input type='text' class="form-control" />
+                <input type="hidden" class="form-control" id="mirror_field" value="{{ yesterday|date:"Y-m-d" }}" readonly />
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+          </div>
+            <h5>Avalaible Datasets: <span class="text-success">2015-01-01</span> : <span class="text-success">{{ yesterday|date:"Y-m-d" }}</span></h5>
+          </div>
+      </div>
+    </div>
+  </div>
+   <div class="panel-body">
+      <div id="wms_map" class="map"></div>
+      <div><h4 id="date_map"></h4></div>
+        <button id="previous" type="button" class="btn btn-default" onclick="previous_map()"><i class="fa fa-chevron-left"></i>&nbsp;</button>
+        <button id="current" class="btn btn-default"></button>
+        <button id="next" type="button" class="btn btn-default" onclick="next_map()"><i class="fa fa-chevron-right"></i>&nbsp;</button>
+        <a style="float: right;" class="btn btn-success" target="_blank" href="http://system.irrigation-management.eu/"> View Meteorogical Network Stations</a>
+   </div>
+</div>
+      <script type="text/javascript">
+          $("#form_datetime").datetimepicker({
+            format: "yyyy-mm-dd",
+            startDate: "2015-01-01",
+            initialDate: '{{ yesterday|date:"Y-m-d" }}',
+            endDate:'{{ yesterday|date:"Y-m-d" }}',
+            autoclose: true,
+            pickerPosition: "bottom-left",
+            minView:2,
+            startView:2,
+            todayHighlight:false,
+            linkField: "mirror_field",
+            linkFormat: "yyyy-mm-dd",
+            pickerPosition: "bottom-left"
+            });
+
+          function create_map(date, meteo_var)
+            {
+              date = (date === undefined) ? '{{ yesterday|date:"Y-m-d" }}' : date;
+              meteo_var = (meteo_var === undefined) ? 'Daily_rain_' : meteo_var;
+              // Clear previous map
+              document.getElementById('wms_map').innerHTML = ""
+              // Map object
+              map = new OpenLayers.Map('wms_map',
+                    {units: 'm',
+                     displayProjection: 'EPSG:4326',
+                     controls: [new OpenLayers.Control.LayerSwitcher(),
+                                new OpenLayers.Control.Navigation(),
+                                new OpenLayers.Control.Zoom(),
+                                new OpenLayers.Control.MousePosition({prefix:'Coordinates(EPSG:3857): '}),
+                                new OpenLayers.Control.ScaleLine()]
+                     });
+              //Base layer
+              var base_cycle = new OpenLayers.Layer.OSM.CycleMap(
+                        "Open Cycle Map",
+                        {isBaseLayer: true,
+                         projection: 'EPSG:3857'});
+              map.addLayer(base_cycle);
+              var ktimatologio = new OpenLayers.Layer.WMS("Hellinic Cadastre",
+                         "http://gis.ktimanet.gr/wms/wmsopen/wmsserver.aspx",
+                           {   layers: 'KTBASEMAP', transparent: false},
+                           {   isBaseLayer: true,
+                               projection: new OpenLayers.Projection("EPSG:900913"),
+                               iformat: 'image/png'});
+              map.addLayer(ktimatologio);
+              var map_variable = new OpenLayers.Layer.WMS(
+                        meteo_var + date,
+                        "http://megdobas.irrigation-management.eu/cgi-bin/mapserver?map=/var/cache/pthelma/mapserver-historical.map",
+                        {layers: meteo_var + date,
+                         format: 'image/png'},
+                        {isBaseLayer: false,
+                         projection: 'EPSG:3857',
+                         opacity: 0.5});
+              map.addLayer(map_variable);
+              document.getElementById('current').innerHTML = "Viewing:  " + date;
+              document.getElementById('next').value = moment(date, "YYYY-MM-DD").add(1,'days').format("YYYY-MM-DD");
+              var n = moment(document.getElementById('next').value, "YYYY-MM-DD");
+              if (n.isAfter('{{ yesterday|date:"Y-m-d" }}')) {
+                  document.getElementById('next').style.display ='none';
+              } else {
+                  document.getElementById('next').style.display = 'inline-block';
+                  document.getElementById('next').innerHTML = moment(date, "YYYY-MM-DD").add(1,'days').format("YYYY-MM-DD") + "&nbsp;<i class='fa fa-chevron-right'></i>&nbsp;";
+              }
+
+              document.getElementById('previous').value = moment(date, "YYYY-MM-DD").subtract(1,'days').format("YYYY-MM-DD");
+              var pr = moment(document.getElementById('previous').value, "YYYY-MM-DD");
+              if (pr.isBefore('2015-01-01')) {
+                  document.getElementById('previous').style.display ='none';
+              } else {
+                  document.getElementById('previous').style.display ='inline-block';
+                  document.getElementById('previous').innerHTML = "&nbsp;<i class='fa fa-chevron-left'></i>&nbsp;" + moment(date, "YYYY-MM-DD").subtract(1,'days').format("YYYY-MM-DD");
+
+
+              }
+
+
+
+              // Add controll and center
+              map.setCenter (new OpenLayers.LonLat(20.98, 39.15).transform('EPSG:4326', 'EPSG:3857'), 10);
+           }
+
+           function previous_map() {
+            var swap_date = document.getElementById('previous').value
+            var meteo_var = document.getElementById('meteo_var').value
+            create_map(swap_date, meteo_var);
+           }
+
+           function next_map() {
+            var swap_date = document.getElementById('next').value
+            var meteo_var = document.getElementById('meteo_var').value
+            create_map(swap_date, meteo_var);
+           }
+
+           function current() {
+            var swap_date = document.getElementById('current').value
+            var meteo_var = document.getElementById('meteo_var').value
+            create_map(swap_date, meteo_var);
+           }
+           // Initial map in first request
+           create_map();
+      </script>
+{% endblock %}
