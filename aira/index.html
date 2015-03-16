@@ -66,7 +66,8 @@
   <div class="panel-heading">
     <div class="row">
       <div class="col-md-6">
-          <h4>&nbsp;&nbsp;&nbsp;View historical available data</h4>
+          <h4>&nbsp;&nbsp;&nbsp;View historical available data <br>
+          &nbsp;&nbsp;&nbsp;<sub><span class="text-success">2015-01-01</span> : <span class="text-success">{{ yesterday|date:"Y-m-d" }}</span></sub></h4>
           <div class="form-group">
             <select onchange="create_map(document.getElementById('mirror_field').value,document.getElementById('meteo_var').value )" id="meteo_var" class="form-control">
               <option value="Daily_rain_">Daily rainfall (mm)</option>
@@ -87,7 +88,7 @@
                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
             </div>
           </div>
-            <h5>Avalaible Datasets: <span class="text-success">2015-01-01</span> : <span class="text-success">{{ yesterday|date:"Y-m-d" }}</span></h5>
+
           </div>
       </div>
     </div>
@@ -153,7 +154,7 @@
                          format: 'image/png'},
                         {isBaseLayer: false,
                          projection: 'EPSG:3857',
-                         opacity: 0.5});
+                         opacity: 0.65});
               map.addLayer(map_variable);
               document.getElementById('current').innerHTML = "Viewing:  " + date;
               document.getElementById('next').value = moment(date, "YYYY-MM-DD").add(1,'days').format("YYYY-MM-DD");
