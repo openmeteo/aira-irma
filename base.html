@@ -32,7 +32,7 @@
         <li><a href="{% url 'django.contrib.auth.views.login' %}" rel="nofollow"><i class="glyphicon glyphicon-off"></i> Login</a></li>
         <li><a href="{% url 'registration_register' %}" rel="nofollow"><i class="glyphicon glyphicon-user"></i> Register</a></li>
         <li><a href="{% url 'password_reset' %}" rel="nofollow"><i class="glyphicon glyphicon-lock"></i> Lost password?</a></li>
-        <li><a href="#" rel="nofollow"><i class="glyphicon glyphicon-book"></i> Description</a></li>
+        <li><a href="{% url 'description' %}" rel="nofollow"><i class="glyphicon glyphicon-book"></i> Description</a></li>
         <li><a href="{% url 'try' %}" rel="nofollow"><i class="glyphicon glyphicon-hand-right"></i> Try</a></li>
       </ul>
     </div>
@@ -60,7 +60,9 @@
         <tr>
           <td style="text-align: center; vertical-align: top; border-width: 0px; border-style: none; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; width: 30%;"><a href="http://www.greece-italy.eu" target="_blank"><img style="border: 0px solid #000000;" src="http://www.irrigation-management.eu/images/site-images/static/interreg.jpg" alt="interreg" width="279" height="83" /></a></td>
           <td style="text-align: center; vertical-align: middle; border-width: 0px; border-style: none; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; width: 40%;"></td>
-          <td style="text-align: center; vertical-align: middle; border-width: 0px; border-style: none; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; width: 30%;"><span style="font-size: 12pt;"></span> <a href="http://www.irrigation-management.eu/component/contact/contact/4-uncategorised/1-irma-info"><i class="fa fa-envelope fa-2x"></i></a> <a href="https://twitter.com/IRMA_project1" target="_blank"><i class="fa fa-twitter fa-2x"></i></a> <a href="https://www.facebook.com/irrigationmanagement" target="_blank"><i class="fa fa-facebook fa-2x"></i></a> <a href="http://www.linkedin.com/groups?homeNewMember=&amp;gid=6566174&amp;trk=eml-grp-sub&amp;fromEmail=&amp;ut=2MQz6USt2_i601" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a> <a href="https://plus.google.com/+IRMAETCPproject/about" target="_blank"><i class="fa fa-google-plus fa-2x"></i></a> <a href="http://www.youtube.com/channel/UCKIADrOv0PrOGSZtts6fpkg" target="_blank"><i class="fa fa-youtube fa-2x"></i></a></td>
+          <td style="text-align: center; vertical-align: middle; border-width: 0px; border-style: none; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; width: 30%;"><span style="font-size: 12pt;"></span>
+          <div class="lead"><span  style="font-size: 16pt;" class="text-success">Follow us</span></div>
+          <a href="http://www.irrigation-management.eu/component/contact/contact/4-uncategorised/1-irma-info"><i class="fa fa-envelope fa-3x"></i></a> | <a href="https://twitter.com/IRMA_project1" target="_blank"><i class="fa fa-twitter fa-3x"></i></a> | <a href="https://www.facebook.com/irrigationmanagement" target="_blank"><i class="fa fa-facebook fa-3x"></i></a> | <a href="http://www.linkedin.com/groups?homeNewMember=&amp;gid=6566174&amp;trk=eml-grp-sub&amp;fromEmail=&amp;ut=2MQz6USt2_i601" target="_blank"><i class="fa fa-linkedin fa-3x"></i></a> | <a href="https://plus.google.com/+IRMAETCPproject/about" target="_blank"><i class="fa fa-google-plus fa-3x"></i></a> | <a href="http://www.youtube.com/channel/UCKIADrOv0PrOGSZtts6fpkg" target="_blank"><i class="fa fa-youtube fa-3x"></i></a></td>
         </tr>
         </tbody>
       </table>
@@ -71,8 +73,8 @@
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-6">
-            <a style="float:left;padding-right: 20px;" href="#"><p>Terms of Use</p></a>
-            <a href="#"><p>Disclaimer</p></a>
+            <a style="float:left;padding-right: 20px;" href="{% url 'terms' %}"><p>Terms of Use</p></a>
+            <a href="{% url 'disclaimer' %}"><p>Disclaimer</p></a>
             </div>
           </div>
   </div>
