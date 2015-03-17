@@ -48,32 +48,35 @@
 {% block main_page %}
 <div class="panel panel-default">
   <div class="panel-heading">
+  &nbsp;
     <div class="row">
+      <div class="col-md-4">
+        <h4>&nbsp;&nbsp;&nbsp;View historical available data <br>
+            &nbsp;&nbsp;&nbsp;<sub>Time Period: <span class="text-success">2015-01-01</span> : <span class="text-success">{{ yesterday|date:"Y-m-d" }}</span></sub>
+        </h4>
+      </div>
       <div class="col-md-6">
-          <h4>&nbsp;&nbsp;&nbsp;View historical available data <br>
-          &nbsp;&nbsp;&nbsp;<sub>Time Period: <span class="text-success">2015-01-01</span> : <span class="text-success">{{ yesterday|date:"Y-m-d" }}</span></sub></h4>
-          <div class="form-group">
-            <select onchange="create_map(document.getElementById('mirror_field').value,document.getElementById('meteo_var').value )" id="meteo_var" class="form-control">
-              <option value="Daily_rain_">Daily rainfall (mm)</option>
-              <option value="Daily_evaporation_">Daily evapotranspiration (mm)</option>
-              <option value="Daily_humidity_max_">Daily max air relevant humidity (%)</option>
-              <option value="Daily_humidity_">Daily mean air relevant humidity (%)</option>
-              <option value="Daily_humidity_min_">Daily min air relevant humidity (%)</option>
-              <option value="Daily_temperature_max_">Daily max air temperature (Celsious)</option>
-              <option value="Daily_temperature_">Daily mean air temperature (Celsious)</option>
-              <option value="Daily_temperature_min_">Daily min air temperature (Celsious)</option>
-              <option value="Daily_pressure_">Daily barometric pressure (hPa) </option>
-              <option value="Daily_solar_radiation_">Daily solar radiation (W/m^2)</option>
-            </select>
-          <div onchange="create_map(document.getElementById('mirror_field').value,document.getElementById('meteo_var').value )" style="float: left;" class="form-group">
-            <div class='input-group date' id='form_datetime'>
-                <input type='text' class="form-control" />
-                <input type="hidden" class="form-control" id="mirror_field" value="{{ yesterday|date:"Y-m-d" }}" readonly />
-                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-            </div>
+        <div class="form-group">
+          <select onchange="create_map(document.getElementById('mirror_field').value,document.getElementById('meteo_var').value )" id="meteo_var" class="form-control">
+            <option value="Daily_rain_">Daily rainfall (mm)</option>
+            <option value="Daily_evaporation_">Daily evapotranspiration (mm)</option>
+            <option value="Daily_humidity_max_">Daily max air relevant humidity (%)</option>
+            <option value="Daily_humidity_">Daily mean air relevant humidity (%)</option>
+            <option value="Daily_humidity_min_">Daily min air relevant humidity (%)</option>
+            <option value="Daily_temperature_max_">Daily max air temperature (Celsious)</option>
+            <option value="Daily_temperature_">Daily mean air temperature (Celsious)</option>
+            <option value="Daily_temperature_min_">Daily min air temperature (Celsious)</option>
+            <option value="Daily_pressure_">Daily barometric pressure (hPa) </option>
+            <option value="Daily_solar_radiation_">Daily solar radiation (W/m^2)</option>
+          </select>
+        <div onchange="create_map(document.getElementById('mirror_field').value,document.getElementById('meteo_var').value )" style="float: left;" class="form-group">
+          <div class='input-group date' id='form_datetime'>
+            <input type='text' class="form-control" />
+            <input type="hidden" class="form-control" id="mirror_field" value="{{ yesterday|date:"Y-m-d" }}" readonly />
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
           </div>
-
-          </div>
+        </div>
+        </div>
       </div>
     </div>
   </div>
