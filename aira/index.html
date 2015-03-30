@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load bootstrap3 %}
+{% load i18n %}
 {% load static %}
 
-{% block title %} IRMA System {% endblock %}
+{% block title %} {% trans "IRMA System" %}{% endblock %}
 
 {% block upper_main %}
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -36,11 +37,11 @@
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+    <span class="sr-only">{% trans "Previous" %}</span>
   </a>
   <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
+    <span class="sr-only">{% trans "Next" %}</span>
   </a>
 </div>
 {% endblock %}
@@ -51,23 +52,23 @@
   &nbsp;
     <div class="row">
       <div class="col-md-4">
-        <h4>&nbsp;&nbsp;&nbsp;View historical available data <br>
-            &nbsp;&nbsp;&nbsp;<sub>Time Period: <span class="text-success">2015-01-01</span> : <span class="text-success">{{ yesterday|date:"Y-m-d" }}</span></sub>
+        <h4>&nbsp;&nbsp;&nbsp;{% trans "View historical available data" %} <br>
+            &nbsp;&nbsp;&nbsp;<sub>{% trans "Time Period:" %} <span class="text-success">2015-01-01</span> : <span class="text-success">{{ yesterday|date:"Y-m-d" }}</span></sub>
         </h4>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <select onchange="create_map(document.getElementById('mirror_field').value,document.getElementById('meteo_var').value )" id="meteo_var" class="form-control">
-            <option value="Daily_rain_">Daily rainfall (mm)</option>
-            <option value="Daily_evaporation_">Daily evapotranspiration (mm)</option>
-            <option value="Daily_humidity_max_">Daily max air relevant humidity (%)</option>
-            <option value="Daily_humidity_">Daily mean air relevant humidity (%)</option>
-            <option value="Daily_humidity_min_">Daily min air relevant humidity (%)</option>
-            <option value="Daily_temperature_max_">Daily max air temperature (Celsious)</option>
-            <option value="Daily_temperature_">Daily mean air temperature (Celsious)</option>
-            <option value="Daily_temperature_min_">Daily min air temperature (Celsious)</option>
-            <option value="Daily_pressure_">Daily barometric pressure (hPa) </option>
-            <option value="Daily_solar_radiation_">Daily solar radiation (W/m^2)</option>
+            <option value="Daily_rain_">{% trans "Daily rainfall (mm)" %}</option>
+            <option value="Daily_evaporation_">{% trans "Daily evapotranspiration (mm)" %}</option>
+            <option value="Daily_humidity_max_">{% trans "Daily max air relevant humidity (%)" %}</option>
+            <option value="Daily_humidity_">{% trans "Daily mean air relevant humidity (%)" %}</option>
+            <option value="Daily_humidity_min_">{% trans "Daily min air relevant humidity (%)" %}</option>
+            <option value="Daily_temperature_max_">{% trans "Daily max air temperature (Celsious)" %}</option>
+            <option value="Daily_temperature_">{% trans "Daily mean air temperature (Celsious)" %}</option>
+            <option value="Daily_temperature_min_">{% trans "Daily min air temperature (Celsious)" %}</option>
+            <option value="Daily_pressure_">{% trans "Daily barometric pressure (hPa)" %} </option>
+            <option value="Daily_solar_radiation_">{% trans "Daily solar radiation (W/m^2)" %}</option>
           </select>
         <div onchange="create_map(document.getElementById('mirror_field').value,document.getElementById('meteo_var').value )" style="float: left;" class="form-group">
           <div class='input-group date' id='form_datetime'>
@@ -86,7 +87,7 @@
         <button id="previous" type="button" class="btn btn-default" onclick="previous_map()"><i class="fa fa-chevron-left"></i>&nbsp;</button>
         <button id="current" class="btn btn-default"></button>
         <button id="next" type="button" class="btn btn-default" onclick="next_map()"><i class="fa fa-chevron-right"></i>&nbsp;</button>
-        <a style="float: right;" class="btn btn-success" target="_blank" href="http://system.irrigation-management.eu/"> View Meteorogical Network Stations</a>
+        <a style="float: right;" class="btn btn-success" target="_blank" href="http://system.irrigation-management.eu/"> {% trans "View Meteorogical Network Stations" %}</a>
    </div>
 </div>
       <script type="text/javascript">

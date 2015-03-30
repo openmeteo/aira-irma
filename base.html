@@ -1,5 +1,7 @@
 {% extends "base-default.html" %}
 {% load static %}
+{% load i18n %}
+
 
 {% block logo_browser %}<link rel="shortcut icon" type="image/png" href="{% static 'img/IRMA_System_logo.png' %}" /> {% endblock %}
 
@@ -22,18 +24,18 @@
     {% if user.is_authenticated %}
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{% url 'home' %}"  rel="nofollow"><i class="glyphicon glyphicon-home"></i> Home</a> </li>
-        <li><a href="{% url 'django.contrib.auth.views.logout' %}"> <i class="glyphicon glyphicon-log-out"></i> Logout </a></li>
+        <li><a href="{% url 'home' %}"  rel="nofollow"><i class="glyphicon glyphicon-home"></i> {% trans "Home" %}</a> </li>
+        <li><a href="{% url 'django.contrib.auth.views.logout' %}"> <i class="glyphicon glyphicon-log-out"></i> {% trans "Logout" %} </a></li>
       </ul>
     </div>
     {% else %}
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{% url 'django.contrib.auth.views.login' %}" rel="nofollow"><i class="glyphicon glyphicon-off"></i> Login</a></li>
-        <li><a href="{% url 'registration_register' %}" rel="nofollow"><i class="glyphicon glyphicon-user"></i> Register</a></li>
-        <li><a href="{% url 'password_reset' %}" rel="nofollow"><i class="glyphicon glyphicon-lock"></i> Lost password?</a></li>
-        <li><a href="{% url 'description' %}" rel="nofollow"><i class="glyphicon glyphicon-book"></i> Description</a></li>
-        <li><a href="{% url 'try' %}" rel="nofollow"><i class="glyphicon glyphicon-hand-right"></i> Try</a></li>
+        <li><a href="{% url 'django.contrib.auth.views.login' %}" rel="nofollow"><i class="glyphicon glyphicon-off"></i> {% trans "Login" %}</a></li>
+        <li><a href="{% url 'registration_register' %}" rel="nofollow"><i class="glyphicon glyphicon-user"></i> {% trans "Register" %}</a></li>
+        <li><a href="{% url 'password_reset' %}" rel="nofollow"><i class="glyphicon glyphicon-lock"></i> {% trans "Lost password?" %}</a></li>
+        <li><a href="{% url 'description' %}" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Description" %}</a></li>
+        <li><a href="{% url 'try' %}" rel="nofollow"><i class="glyphicon glyphicon-hand-right"></i> {% trans "Try" %}</a></li>
       </ul>
     </div>
     {% endif %}
@@ -69,12 +71,12 @@
           <hr>
           <div class="row">
             <div class="col-md-3">
-              <p  class="text-success">Copyright &#169; 2013 - 2015 <a href="http://tegeo.teiep.gr/en/" target = "_blank">teiep.gr </a>  </p>
+              <p  class="text-success">{% trans "Copyright " %}&#169; 2013 - 2015 <a href="http://tegeo.teiep.gr/en/" target = "_blank">teiep.gr </a>  </p>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-6">
-            <a style="float:left;padding-right: 20px;" href="{% url 'terms' %}"><p>Terms of Use</p></a>
-            <a href="{% url 'disclaimer' %}"><p>Disclaimer</p></a>
+            <a style="float:left;padding-right: 20px;" href="{% url 'terms' %}"><p>{% trans "Terms of Use" %}</p></a>
+            <a href="{% url 'disclaimer' %}"><p>{% trans "Disclaimer" %}</p></a>
             </div>
           </div>
   </div>
