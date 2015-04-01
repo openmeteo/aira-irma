@@ -1,5 +1,5 @@
 
-Special 'templates' , 'static' for _openmeteo/aira and _IRMA project
+Special `templates` , `static` for openmeteo aira_ and IRMA_ project
 
-.. _openmeteo/aira: https://github.com/openmeteo/aira
+.. _aira: https://github.com/openmeteo/aira
 .. _IRMA: http://www.irrigation-management.eu/
