@@ -7,6 +7,22 @@
 
 {% block over_navbar %}
   <a href="http://www.irrigation-management.eu/" target="_blank"><img src="{% static 'img/header_logo.png' %}" width="400" class="img-responsive" alt="Irrigation Management Eu"></a><br>
+  <form align="right" class="form-inline" action="{% url 'set_language' %}" method="post">
+  {% csrf_token %}
+  <input name="next" type="hidden" value="{{ redirect_to }}" />
+  <select name="language">
+  {% get_current_language as LANGUAGE_CODE %}
+  {% get_available_languages as LANGUAGES %}
+  {% get_language_info_list for LANGUAGES as languages %}
+  {% for language in languages %}
+  <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+      {{ language.name_local }} ({{ language.code }})
+  </option>
+  {% endfor %}
+  </select>
+    <button type="submit" class="btn btn-primary btn-xs"> {% trans "Go" %} </button>
+  </form>
+<br>
 {% endblock %}
 
 {% block navbar %}
@@ -63,7 +79,7 @@
           <td style="text-align: center; vertical-align: top; border-width: 0px; border-style: none; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; width: 30%;"><a href="http://www.greece-italy.eu" target="_blank"><img style="border: 0px solid #000000;" src="http://www.irrigation-management.eu/images/site-images/static/interreg.jpg" alt="interreg" width="279" height="83" /></a></td>
           <td style="text-align: center; vertical-align: middle; border-width: 0px; border-style: none; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; width: 40%;"></td>
           <td style="text-align: center; vertical-align: middle; border-width: 0px; border-style: none; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; width: 30%;"><span style="font-size: 12pt;"></span>
-          <div class="lead"><span  style="font-size: 16pt;" class="text-success">Follow us</span></div>
+          <div class="lead"><span  style="font-size: 16pt;" class="text-success">{% trans "Follow us" %}</span></div>
           <a href="http://www.irrigation-management.eu/component/contact/contact/4-uncategorised/1-irma-info"><i class="fa fa-envelope fa-1x"></i></a> | <a href="https://twitter.com/IRMA_project1" target="_blank"><i class="fa fa-twitter fa-1x"></i></a> | <a href="https://www.facebook.com/irrigationmanagement" target="_blank"><i class="fa fa-facebook fa-1x"></i></a> | <a href="http://www.linkedin.com/groups?homeNewMember=&amp;gid=6566174&amp;trk=eml-grp-sub&amp;fromEmail=&amp;ut=2MQz6USt2_i601" target="_blank"><i class="fa fa-linkedin fa-1x"></i></a> | <a href="https://plus.google.com/+IRMAETCPproject/about" target="_blank"><i class="fa fa-google-plus fa-1x"></i></a> | <a href="http://www.youtube.com/channel/UCKIADrOv0PrOGSZtts6fpkg" target="_blank"><i class="fa fa-youtube fa-1x"></i></a></td>
         </tr>
         </tbody>

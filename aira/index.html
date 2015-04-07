@@ -3,7 +3,7 @@
 {% load i18n %}
 {% load static %}
 
-{% block title %} {% trans "IRMA System" %}{% endblock %}
+{% block title %} IRMA System - {% trans "Welcome " %} {% endblock %}
 
 {% block upper_main %}
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -45,35 +45,32 @@
   </a>
 </div>
 {% endblock %}
-
 {% block main_page %}
-<div class="panel panel-default">
-  <div class="panel-heading">
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+    <div class="panel-heading">
   &nbsp;
     <div class="row">
       <div class="col-md-4">
-        <h4>&nbsp;&nbsp;&nbsp;{% trans "View historical available data" %} <br>
-            &nbsp;&nbsp;&nbsp;<sub>{% trans "Time Period:" %} <span class="text-success">2015-01-01</span> : <span class="text-success">{{ yesterday|date:"Y-m-d" }}</span></sub>
+        <h4>&nbsp;&nbsp;&nbsp;{% trans "View historical available data" %}<br>
+            &nbsp;&nbsp;&nbsp;<sub>{% trans "Time Period" %}: <span class="text-success">2015-01-01</span> : <span class="text-success">2015-04-06</span></sub>
         </h4>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <select onchange="create_map(document.getElementById('mirror_field').value,document.getElementById('meteo_var').value )" id="meteo_var" class="form-control">
-            <option value="Daily_rain_">{% trans "Daily rainfall (mm)" %}</option>
-            <option value="Daily_evaporation_">{% trans "Daily evapotranspiration (mm)" %}</option>
-            <option value="Daily_humidity_max_">{% trans "Daily max air relevant humidity (%)" %}</option>
-            <option value="Daily_humidity_">{% trans "Daily mean air relevant humidity (%)" %}</option>
-            <option value="Daily_humidity_min_">{% trans "Daily min air relevant humidity (%)" %}</option>
-            <option value="Daily_temperature_max_">{% trans "Daily max air temperature (Celsious)" %}</option>
-            <option value="Daily_temperature_">{% trans "Daily mean air temperature (Celsious)" %}</option>
-            <option value="Daily_temperature_min_">{% trans "Daily min air temperature (Celsious)" %}</option>
-            <option value="Daily_pressure_">{% trans "Daily barometric pressure (hPa)" %} </option>
-            <option value="Daily_solar_radiation_">{% trans "Daily solar radiation (W/m^2)" %}</option>
+            <option value="Daily_rain_">{% trans "Daily Rainfall" %} (mm)</option>
+                        <option value="Daily_evaporation_">{% trans "Daily Evaporation" %} (mm)</option>
+                        <option value="Daily_humidity_">{% trans "Daily Humidity" %} (%)</option>
+                        <option value="Daily_temperature_">{% trans "Daily Temperature" %} (oC)</option>
+                        <option value="Daily_wind_speed_">{% trans "Daily Wind Speed" %} (m3/sec)</option>
+                        <option value="Daily_solar_radiation_">{% trans "Daily Solar Radiation" %} kW/m2</option>
           </select>
         <div onchange="create_map(document.getElementById('mirror_field').value,document.getElementById('meteo_var').value )" style="float: left;" class="form-group">
           <div class='input-group date' id='form_datetime'>
             <input type='text' class="form-control" />
-            <input type="hidden" class="form-control" id="mirror_field" value="{{ yesterday|date:"Y-m-d" }}" readonly />
+            <input type="hidden" class="form-control" id="mirror_field" value="2015-04-06" readonly />
             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
           </div>
         </div>
@@ -81,14 +78,15 @@
       </div>
     </div>
   </div>
-   <div class="panel-body">
-      <div id="wms_map" class="map"></div>
-      <div><h4 id="date_map"></h4></div>
-        <button id="previous" type="button" class="btn btn-default" onclick="previous_map()"><i class="fa fa-chevron-left"></i>&nbsp;</button>
-        <button id="current" class="btn btn-default"></button>
-        <button id="next" type="button" class="btn btn-default" onclick="next_map()"><i class="fa fa-chevron-right"></i>&nbsp;</button>
-        <a style="float: right;" class="btn btn-success" target="_blank" href="http://system.irrigation-management.eu/"> {% trans "View Meteorogical Network Stations" %}</a>
-   </div>
+       <div class="panel-body">
+          <div id="wms_map" class="map"></div>
+          <div><h4 id="date_map"></h4></div>
+            <button id="previous" type="button" class="btn btn-default" onclick="previous_map()"><i class="fa fa-chevron-left"></i>&nbsp;</button>
+            <button id="current" class="btn btn-default"></button>
+            <button id="next" type="button" class="btn btn-default" onclick="next_map()"><i class="fa fa-chevron-right"></i>&nbsp;</button>
+       </div>
+    </div>
+  </div>
 </div>
       <script type="text/javascript">
           $("#form_datetime").datetimepicker({
@@ -128,6 +126,7 @@
                         {isBaseLayer: true,
                          projection: 'EPSG:3857'});
               map.addLayer(base_cycle);
+              // Loop to add WMS layers
               var ktimatologio = new OpenLayers.Layer.WMS("Hellenic Cadastre",
                          "http://gis.ktimanet.gr/wms/wmsopen/wmsserver.aspx",
                            {   layers: 'KTBASEMAP', transparent: false},
@@ -144,7 +143,7 @@
                          projection: 'EPSG:3857',
                          opacity: 0.65});
               map.addLayer(map_variable);
-              document.getElementById('current').innerHTML = "Viewing:  " + date;
+              document.getElementById('current').innerHTML = '{% trans "Viewing:" %}' + date;
               document.getElementById('next').value = moment(date, "YYYY-MM-DD").add(1,'days').format("YYYY-MM-DD");
               var n = moment(document.getElementById('next').value, "YYYY-MM-DD");
               if (n.isAfter('{{ yesterday|date:"Y-m-d" }}')) {
