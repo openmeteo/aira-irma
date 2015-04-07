@@ -397,8 +397,8 @@ msgid "Daily Rainfall"
 msgstr "Μέση Ημερήσια βροχόπτωση"
 
 #: aira/templates/aira/index.html:40
-msgid "Daily Evaporation"
-msgstr "Μέση Ημερήσια Εξάτμιση"
+msgid "Daily Evapotranspiration"
+msgstr "Ημερήσια Δυνητική Εξατμισοδιαπνοή"
 
 #: aira/templates/aira/index.html:41
 msgid "Daily Humidity"
