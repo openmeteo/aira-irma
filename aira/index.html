@@ -60,13 +60,12 @@
       <div class="col-md-6">
         <div class="form-group">
           <select onchange="create_map(document.getElementById('mirror_field').value,document.getElementById('meteo_var').value )" id="meteo_var" class="form-control">
-            <option value="Daily_rain_">{% trans "Daily Rainfall" %} (mm)</option>
-                        <option value="Daily_evaporation_">{% trans "Daily Potential Evapotranspiration" %} (mm/d)</option>
-                        <option value="Daily_humidity_">{% trans "Daily Humidity" %} (%)</option>
-                        <option value="Daily_temperature_">{% trans "Daily Temperature" %} (oC)</option>
-                        <option value="Daily_wind_speed_">{% trans "Daily Wind Speed" %} (m3/sec)</option>
-                        <option value="Daily_solar_radiation_">{% trans "Daily Solar Radiation" %} kW/m2</option>
-          </select>
+            <option value="Daily_rain_">{% trans "Daily Rainfall" %} (mm/d)</option>
+            <option value="Daily_evaporation_">{% trans "Daily Potential Evapotranspiration" %} (mm/d)</option>
+            <option value="Daily_humidity_">{% trans "Daily Humidity" %} (%)</option>
+            <option value="Daily_temperature_">{% trans "Daily Temperature" %} (oC)</option>
+            <option value="Daily_wind_speed_">{% trans "Daily Wind Speed" %} (m/s)</option>
+            <option value="Daily_solar_radiation_">{% trans "Daily Solar Radiation" %} (MJ/m2/h)</option>
         <div onchange="create_map(document.getElementById('mirror_field').value,document.getElementById('meteo_var').value )" style="float: left;" class="form-group">
           <div class='input-group date' id='form_datetime'>
             <input type='text' class="form-control" />
