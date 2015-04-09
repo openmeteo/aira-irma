@@ -643,3 +643,6 @@ msgstr "Περιγραφή"
 
 msgid "Try"
 msgstr "Δοκιμή"
+
+msgid "Warning"
+msgstr "Προειδοποίηση"
