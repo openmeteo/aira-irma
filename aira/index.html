@@ -44,6 +44,7 @@
     <span class="sr-only">{% trans "Next" %}</span>
   </a>
 </div>
+
 {% endblock %}
 {% block main_page %}
 <div class="row">
@@ -66,6 +67,7 @@
             <option value="Daily_temperature_">{% trans "Daily Temperature" %} (oC)</option>
             <option value="Daily_wind_speed_">{% trans "Daily Wind Speed" %} (m/s)</option>
             <option value="Daily_solar_radiation_">{% trans "Daily Solar Radiation" %} (MJ/m2/h)</option>
+          </select>
         <div onchange="create_map(document.getElementById('mirror_field').value,document.getElementById('meteo_var').value )" style="float: left;" class="form-group">
           <div class='input-group date' id='form_datetime'>
             <input type='text' class="form-control" />
