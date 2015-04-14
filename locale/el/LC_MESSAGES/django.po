@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-14 19:49+0300\n"
+"POT-Creation-Date: 2015-04-14 20:55+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,10 +76,8 @@ msgstr "Εκτιμώμενο μέγιστο βάθος ριζοστρώματο�
 msgid "Root depth (min)"
 msgstr "Εκτιμώμενο μέγιστο βάθος ριζοστρώματος (m)"
 
-#: aira/forms.py:45
-#, fuzzy
-#| msgid "Maximum Allowable Depletion"
-msgid "Maximum allowable depletion"
+#: aira/forms.py:45 aira/templates/aira/advice.html:73
+msgid "Maximum Allowable Depletion"
 msgstr "Μέγιστο Επιτρεπόμενο Υδατικό Έλλειμμα"
 
 #: aira/forms.py:46
@@ -125,10 +123,6 @@ msgstr "Χρήση προσαρμοσμένων παραμέτρων"
 #: aira/templates/aira/advice.html:71
 msgid "Estimated root depth (max)"
 msgstr "Εκτιμώμενο μέγιστο βάθος ριζοστρώματος (m)"
-
-#: aira/templates/aira/advice.html:73
-msgid "Maximum Allowable Depletion"
-msgstr "Μέγιστο Επιτρεπόμενο Υδατικό Έλλειμμα"
 
 #: aira/templates/aira/advice.html:83
 msgid "Irrigation System Type"
@@ -271,16 +265,28 @@ msgid "Update"
 msgstr "Ανανέωση"
 
 #: aira/templates/aira/agrifield_update.html:115
+msgid "Irrigation Management"
+msgstr "Διαχείριση Άρδευσης"
+
 #: aira/templates/aira/agrifield_update.html:117
 #: aira/templates/aira/agrifield_update.html:119
-#: aira/templates/aira/agrifield_update.html:121
-#: aira/templates/aira/agrifield_update.html:123
-#: aira/templates/aira/agrifield_update.html:125
-#: aira/templates/aira/agrifield_update.html:127
-#: aira/templates/aira/agrifield_update.html:129
-#: aira/templates/aira/agrifield_update.html:131
+#: aira/templates/aira/agrifield_update.html:124
+#: aira/templates/aira/agrifield_update.html:126
+#: aira/templates/aira/agrifield_update.html:128
+#: aira/templates/aira/agrifield_update.html:130
+#: aira/templates/aira/agrifield_update.html:135
+#: aira/templates/aira/agrifield_update.html:137
+#: aira/templates/aira/agrifield_update.html:139
 msgid "Value from system's database"
 msgstr "Τιμή στην βάση δεδομένων του συστήματος"
+
+#: aira/templates/aira/agrifield_update.html:122
+msgid "Crop"
+msgstr "Καλλιέργεια"
+
+#: aira/templates/aira/agrifield_update.html:133
+msgid "Soil"
+msgstr "Έδαφος"
 
 #: aira/templates/aira/home.html:6 aira/templates/base.html:41
 msgid "Home"
@@ -664,6 +670,10 @@ msgstr "Αγγλικά"
 msgid "Greek"
 msgstr "Ελληνικά"
 
+
+msgid "Maximum Allowable Depletion"
+msgstr "Μέγιστο Επιτρεπόμενο Υδατικό Έλλειμμα"
+
 msgid "No need to irrigate"
 msgstr "Δεν απαιτείται άρδευση"
 
@@ -674,16 +684,15 @@ msgid "Follow us"
 msgstr "Ακολούθησε μας"
 
 msgid "Terms of Use"
- msgstr "Όροι Χρήσης"
+msgstr "Όροι Χρήσης"
 
-msgid "Disclaimer"
-msgstr "Αποποίηση ευθύνης"
+msgid "Disclaimer"msgstr "Αποποίηση ευθύνης"
 
 msgid "Description"
 msgstr "Περιγραφή"
 
 msgid "Try"
- msgstr "Δοκιμή"
+msgstr "Δοκιμή"
 
 msgid "View Meteorogical Network Stations"
 msgstr "Εμφάνιση Μετεωρολογικού Δικτύου"
