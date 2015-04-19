@@ -6,7 +6,7 @@
 {% block logo_browser %}<link rel="shortcut icon" type="image/png" href="{% static 'img/IRMA_System_logo.png' %}" /> {% endblock %}
 
 {% block over_navbar %}
-  <a href="http://www.irrigation-management.eu/" target="_blank"><img src="{% static 'img/header_logo.png' %}" width="400" class="img-responsive" alt="Irrigation Management Eu"></a><br>
+  <a href="http://www.irrigation-management.eu/" target="_blank"><img src="{% static 'img/IRMAwebsiteLogo.png' %}" width="400" class="img-responsive" alt="Irrigation Management Eu"></a><br>
   <form align="right" class="form-inline" action="{% url 'set_language' %}" method="post">
   {% csrf_token %}
   <input name="next" type="hidden" value="{{ redirect_to }}" />
@@ -35,7 +35,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a style="max-width:100px; margin-top: -13px;" class="navbar-brand" href="{% url 'welcome' %}" ><img src="{% static 'img/IRMA_System_logo.png' %}" width="40" height="45"></a> <a style="float:left" href="{% url 'welcome' %}"><img src="{% static 'img/NextToLogo.png' %}"></a>
+      <a style="max-width:100px; margin-top: -13px;" class="navbar-brand" href="{% url 'welcome' %}" ><img src="{% static 'img/IRMA_SYSLogo.png' %}" width="250"></a>
     </div>
     {% if user.is_authenticated %}
     <div class="navbar-collapse collapse">
