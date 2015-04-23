@@ -693,3 +693,9 @@ msgstr "Εμφάνιση Μετεωρολογικού Δικτύου"
 
 msgid "Maps from satellite images"
 msgstr "Χάρτες από δορυφορικές εικόνες"
+
+msgid "Maps"
+msgstr "Χάρτες"
+
+msgid "Logged in as"
+msgstr "Συνδεδεμένος ώς"
