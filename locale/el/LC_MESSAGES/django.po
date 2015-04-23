@@ -699,3 +699,12 @@ msgstr "Χάρτες"
 
 msgid "Logged in as"
 msgstr "Συνδεδεμένος ώς"
+
+msgid "Since the last recorded irrigation"
+msgstr "Από την τελευταία καταχωρημένη άδρευση"
+
+msgid "up to"
+msgstr "ως και"
+
+msgid "of additional water are needed"
+msgstr "επιπλέον νερό απαιτούνται"
