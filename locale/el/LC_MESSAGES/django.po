@@ -706,5 +706,8 @@ msgstr "Από την τελευταία καταχωρημένη άδρευση
 msgid "up to"
 msgstr "ως και"
 
-msgid "of additional water are needed"
-msgstr "επιπλέον νερό απαιτούνται"
+msgid "there is need of"
+msgstr "υπάρχει ανάγκη"
+
+msgid "additional water"
+msgstr "επιπλέον νερού"
