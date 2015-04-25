@@ -39,19 +39,23 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      {% if user.is_authenticated %}
-         <a style="max-width:100px; margin-top: -13px;" class="navbar-brand" href="{% url 'welcome' %}" ><img src="{% static 'img/IRMA_SYSLogo.png' %}" width="150"></a>
-        {% trans "Logged in as" %}: <span class="text-success">{{user.username}}</span>
-      {% else %}
-
-      <a style="max-width:100px; margin-top: -13px;" class="navbar-brand" href="{% url 'welcome' %}" ><img src="{% static 'img/IRMA_SYSLogo.png' %}" width="220"></a>
-      {% endif %}
+      <a style="max-width:100px; margin-top: -13px;" class="navbar-brand" href="{% url 'welcome' %}" ><img src="{% static 'img/IRMA_SYSLogo.png' %}" width="210"></a>
     </div>
     {% if user.is_authenticated %}
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{% url 'home' %}"  rel="nofollow"><i class="glyphicon glyphicon-tree-deciduous"></i> {% trans "My Fields" %}</a> </li>
-        <li><a href="{% url 'django.contrib.auth.views.logout' %}"> <i class="glyphicon glyphicon-log-out"></i> {% trans "Logout" %} </a></li>
+        {{ user.profile_set.all }}
+        <li><a href="#"><b>{% trans "Welcome" %}:</b> {{ user.username }}</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-cog"></i> {% trans "Management" %} <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="{% url 'home' %}"  rel="nofollow"><i class="glyphicon glyphicon-leaf"></i> {% trans "My Fields" %}</a> </li>
+            <li><a href="{% url 'description' %}" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Description" %}</a></li>
+            <li><a href="{% url 'update_profile' user.profile.id  %}"><i class="glyphicon glyphicon-user"></i>  {% trans "Account" %}</a></li>
+            <li class="divider"></li>
+            <li><a href="{% url 'django.contrib.auth.views.logout' %}"> <i class="glyphicon glyphicon-log-out"></i> {% trans "Logout" %} </a></li>
+          </ul>
+        </li>
       </ul>
     </div>
     {% else %}

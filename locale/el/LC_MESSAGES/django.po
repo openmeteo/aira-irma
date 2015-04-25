@@ -711,3 +711,9 @@ msgstr "υπάρχει ανάγκη"
 
 msgid "additional water"
 msgstr "επιπλέον νερού"
+
+msgid "Account"
+msgstr "Λογαριασμός"
+
+msgid "Management"
+msgstr "Διαχείριση"
