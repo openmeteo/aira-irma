@@ -101,8 +101,8 @@ msgid "Datetime (Y-M-D h:m:s) "
 msgstr "Ημερομηνία και ώρα (Y-M-D h:m:s)"
 
 #: aira/forms.py:59
-msgid "Applied Irrigation Water (m3)"
-msgstr "Δόση άρδευσης (m3)"
+msgid "Applied Irrigation Water"
+msgstr "Δόση άρδευσης"
 
 #: aira/templates/404.html:5 aira/templates/404.html.py:9
 msgid "Page not found"
@@ -484,7 +484,7 @@ msgstr "Ημερομήνια"
 
 #: aira/templates/aira/irrigationlog_form.html:51
 msgid "Applied water"
-msgstr "Δόση άρδευσης (m3)"
+msgstr "Δόση άρδευσης"
 
 #: aira/templates/aira/profile_form.html:10
 msgid "Profile"
