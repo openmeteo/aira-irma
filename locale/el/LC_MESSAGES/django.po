@@ -717,3 +717,6 @@ msgstr "Λογαριασμός"
 
 msgid "Management"
 msgstr "Διαχείριση"
+
+msgid "My Fields"
+msgstr "Τα Αγροτεμάχια μου"
