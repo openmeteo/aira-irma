@@ -9,24 +9,6 @@
 {% endblock %}
 
 {% block over_navbar %}
-  <br>
-  <form align="right" class="form-inline" action="{% url 'set_language' %}" method="post">
-  {% csrf_token %}
-  <input name="next" type="hidden" value="{{ redirect_to }}" />
-  <select name="language">
-  {% get_current_language as LANGUAGE_CODE %}
-  {% get_available_languages as LANGUAGES %}
-  {% get_language_info_list for LANGUAGES as languages %}
-  {% for language in languages %}
-  <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
-      {{ language.name_local }} ({{ language.code }})
-  </option>
-  {% endfor %}
-  </select>
-    <button type="submit" class="btn btn-primary btn-xs"> {% trans "Go" %} </button>
-  </form>
-<br>
-
 {% endblock %}
 
 {% block navbar %}
@@ -55,6 +37,7 @@
             {% else %}
                 <li><a href="{% url 'create_profile' %}"><i class="glyphicon glyphicon-user"></i> {% trans "Account" %}</a></li>
             {% endif %}
+            <li><a href="{% url 'tools' %}"><i class="glyphicon glyphicon-wrench"></i> {% trans "Tools" %}</a></li>
             <li class="divider"></li>
             <li><a href="{% url 'django.contrib.auth.views.logout' %}"> <i class="glyphicon glyphicon-log-out"></i> {% trans "Logout" %} </a></li>
           </ul>
@@ -74,6 +57,22 @@
     {% endif %}
     </div> <!--container - fluid -->
   </div> <!-- navbar -->
+  <form align="left" class="form-inline" action="{% url 'set_language' %}" method="post">
+  {% csrf_token %}
+  <input name="next" type="hidden" value="{{ redirect_to }}" />
+  <select name="language">
+  {% get_current_language as LANGUAGE_CODE %}
+  {% get_available_languages as LANGUAGES %}
+  {% get_language_info_list for LANGUAGES as languages %}
+  {% for language in languages %}
+  <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+      {{ language.name_local }} ({{ language.code }})
+  </option>
+  {% endfor %}
+  </select>
+    <button type="submit" class="btn btn-primary btn-xs"> {% trans "Go" %} </button>
+  </form>
+  <br>
 {% endblock %}
 
 {% block content %}
