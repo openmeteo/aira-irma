@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block over_navbar %}
-  <a href="http://www.irrigation-management.eu/" target="_blank"><img src="{% static 'img/IRMAwebsiteLogo.png' %}" width="400" class="img-responsive" alt="Irrigation Management Eu"></a><br>
+  <br>
   <form align="right" class="form-inline" action="{% url 'set_language' %}" method="post">
   {% csrf_token %}
   <input name="next" type="hidden" value="{{ redirect_to }}" />
@@ -48,10 +48,10 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-cog"></i> {% trans "Management" %} <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="{% url 'home' %}"  rel="nofollow"><i class="glyphicon glyphicon-leaf"></i> {% trans "My Fields" %}</a> </li>
+            <li><a href="{% url 'home' user.username %}"  rel="nofollow"><i class="glyphicon glyphicon-leaf"></i> {% trans "My Fields" %}</a> </li>
             <li><a href="{% url 'description' %}" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Description" %}</a></li>
             {% if user.profile.id %}
-                <li><a href="{% url 'update_profile' user.profile.id  %}"><i class="glyphicon glyphicon-user"></i>{% trans "Account" %}</a></li>
+                <li><a href="{% url 'update_profile' user.profile.id  %}"><i class="glyphicon glyphicon-user"></i> {% trans "Account" %}</a></li>
             {% else %}
                 <li><a href="{% url 'create_profile' %}"><i class="glyphicon glyphicon-user"></i> {% trans "Account" %}</a></li>
             {% endif %}
@@ -90,28 +90,33 @@
 {% block footer %}
   <div class="container">
     <hr>
-      <table style="border-width: 0px; border-style: none; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; width: 100%;" border="0">
-        <tbody>
-        <tr>
-          <td style="text-align: center; vertical-align: top; border-width: 0px; border-style: none; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; width: 30%;"><a href="http://www.greece-italy.eu" target="_blank"><img style="border: 0px solid #000000;" src="http://www.irrigation-management.eu/images/site-images/static/interreg.jpg" alt="interreg" width="279" height="83" /></a></td>
-          <td style="text-align: center; vertical-align: middle; border-width: 0px; border-style: none; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; width: 40%;"></td>
-          <td style="text-align: center; vertical-align: middle; border-width: 0px; border-style: none; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; width: 30%;"><span style="font-size: 12pt;"></span>
-          <div class="lead"><span  style="font-size: 16pt;" class="text-success">{% trans "Follow us" %}</span></div>
-          <a href="http://www.irrigation-management.eu/component/contact/contact/4-uncategorised/1-irma-info"><i class="fa fa-envelope fa-1x"></i></a> | <a href="https://twitter.com/IRMA_project1" target="_blank"><i class="fa fa-twitter fa-1x"></i></a> | <a href="https://www.facebook.com/irrigationmanagement" target="_blank"><i class="fa fa-facebook fa-1x"></i></a> | <a href="http://www.linkedin.com/groups?homeNewMember=&amp;gid=6566174&amp;trk=eml-grp-sub&amp;fromEmail=&amp;ut=2MQz6USt2_i601" target="_blank"><i class="fa fa-linkedin fa-1x"></i></a> | <a href="https://plus.google.com/+IRMAETCPproject/about" target="_blank"><i class="fa fa-google-plus fa-1x"></i></a> | <a href="http://www.youtube.com/channel/UCKIADrOv0PrOGSZtts6fpkg" target="_blank"><i class="fa fa-youtube fa-1x"></i></a></td>
-        </tr>
-        </tbody>
-      </table>
-          <hr>
-          <div class="row">
-            <div class="col-md-3">
-              <p  class="text-success">{% trans "Copyright " %}&#169; 2013 - 2015 <a href="http://tegeo.teiep.gr/en/" target = "_blank">teiep.gr </a>  </p>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-6">
-            <a style="float:left;padding-right: 20px;" href="{% url 'terms' %}"><p>{% trans "Terms of Use" %}</p></a>
-            <a href="{% url 'disclaimer' %}"><p>{% trans "Disclaimer" %}</p></a>
-            </div>
-          </div>
+    <div class="row">
+      <div class="col-md-4" style="text-align: center">
+        <a href="http://www.greece-italy.eu" target="_blank"><img style="border: 0px solid #000000;" src="http://www.irrigation-management.eu/images/site-images/static/interreg.jpg" alt="interreg" width="279" height="83" /></a>
+      </div>
+      <div class="col-md-4" style="text-align: center">
+        <a href="http://www.irrigation-management.eu/" target="_blank"><img src="{% static 'img/IRMAwebsiteLogo.png' %}" width="500" height="83" class="img-responsive" alt="Irrigation Management Eu"></a>
+      </div>
+      <div class="col-md-4">
+        <div style="text-align: center">
+        <span  style="font-size: 16pt;" class="text-success">{% trans "Follow us" %}</span> <br>
+            <a href="http://www.irrigation-management.eu/component/contact/contact/4-uncategorised/1-irma-info"><i class="fa fa-envelope fa-1x"></i></a> | <a href="https://twitter.com/IRMA_project1" target="_blank"><i class="fa fa-twitter fa-1x"></i></a> | <a href="https://www.facebook.com/irrigationmanagement" target="_blank"><i class="fa fa-facebook fa-1x"></i></a> | <a href="http://www.linkedin.com/groups?homeNewMember=&amp;gid=6566174&amp;trk=eml-grp-sub&amp;fromEmail=&amp;ut=2MQz6USt2_i601" target="_blank"><i class="fa fa-linkedin fa-1x"></i></a> | <a href="https://plus.google.com/+IRMAETCPproject/about" target="_blank"><i class="fa fa-google-plus fa-1x"></i></a> | <a href="http://www.youtube.com/channel/UCKIADrOv0PrOGSZtts6fpkg" target="_blank"><i class="fa fa-youtube fa-1x"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-4">
+        <p  class="text-success">{% trans "Copyright " %}&#169; 2013 - 2015 <a href="http://tegeo.teiep.gr/en/" target = "_blank">teiep.gr </a>  </p>
+      </div>
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-4">
+      <a style="float:left;padding-right: 20px;" href="{% url 'terms' %}"><p>{% trans "Terms of Use" %}</p></a>
+      <a href="{% url 'disclaimer' %}"><p>{% trans "Disclaimer" %}</p></a>
+      </div>
+    </div>
   </div>
 {% endblock %}
 
