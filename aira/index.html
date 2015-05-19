@@ -167,7 +167,67 @@
 
               }
 
+              // When clicking on the map, show popup with values of variables
+              OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {
+                  defaultHandlerOptions: {
+                      'single': true,
+                      'double': false,
+                      'pixelTolerance': 0,
+                      'stopSingle': false,
+                      'stopDouble': false
+                  },
+                  initialize: function(options) {
+                      this.handlerOptions = OpenLayers.Util.extend(
+                          {}, this.defaultHandlerOptions
+                      );
+                      OpenLayers.Control.prototype.initialize.apply(
+                          this, arguments
+                      );
+                      this.handler = new OpenLayers.Handler.Click(
+                          this, {
+                              'click': this.trigger
+                          }, this.handlerOptions
+                      );
+                  },
+                  trigger: function(e) {
+                      var lonlat = map.getLonLatFromPixel(e.xy);
+                      var xhr = new XMLHttpRequest();
 
+                      // Create a small bbox such as the point is at the bottom left of the box
+                      var xlow = lonlat.lon;
+                      var xhigh = lonlat.lon + 50;
+                      var ylow = lonlat.lat;
+                      var yhigh = lonlat.lat + 50;
+                      var bbox = xlow + ',' + ylow + ',' + xhigh + ',' + yhigh
+
+                      // Determine layers
+                      var layers='';
+                      ['temperature', 'humidity', 'wind_speed', 'rain', 'evaporation'].forEach(function(s) {
+                          if (layers != '') {
+                              layers = layers + ',';
+                          }
+                          layers = layers + 'Daily_' + s + '_' + date;
+                      })
+
+                      // Assemble URL
+                      var url = 'http://arta.irrigation-management.eu/mapserver-historical/';
+                      url = url + '?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&SRS=EPSG:3857&info_format=text/html';
+                      url = url + '&BBOX=' + bbox + '&WIDTH=2&HEIGHT=2&X=0&Y=0';
+                      url = url + '&LAYERS=' + layers + '&QUERY_LAYERS=' + layers;
+
+                      xhr.open('GET', url, false);
+                      xhr.send()
+                      if (xhr.readyState == 4) {
+                          map.addPopup(new OpenLayers.Popup.FramedCloud(
+                                       null, lonlat, null,
+                                       xhr.responseText,
+                                       null, true));
+                      }
+                  }
+              });
+              var click = new OpenLayers.Control.Click();
+              map.addControl(click);
+              click.activate();
 
               // Add controll and center
               map.setCenter (new OpenLayers.LonLat(20.98, 39.15).transform('EPSG:4326', 'EPSG:3857'), 10);
