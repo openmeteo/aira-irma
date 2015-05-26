@@ -202,7 +202,8 @@
 
                       // Determine layers
                       var layers='';
-                      ['temperature', 'humidity', 'wind_speed', 'rain', 'evaporation'].forEach(function(s) {
+                      ['temperature', 'humidity', 'wind_speed', 'rain', 'evaporation',
+                      'solar_radiation'].forEach(function(s) {
                           if (layers != '') {
                               layers = layers + ',';
                           }
