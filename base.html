@@ -51,7 +51,7 @@
         <li><a href="{% url 'django.contrib.auth.views.login' %}" rel="nofollow"><i class="glyphicon glyphicon-off"></i> {% trans "Login" %}</a></li>
         <li><a href="{% url 'registration_register' %}" rel="nofollow"><i class="glyphicon glyphicon-user"></i> {% trans "Register" %}</a></li>
         <li><a href="{% url 'password_reset' %}" rel="nofollow"><i class="glyphicon glyphicon-lock"></i> {% trans "Lost password?" %}</a></li>
-        <li><a href="{% url 'description' %}" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Description" %}</a></li>
+        <li><a href="{{ MEDIA_URL }}misc/description.pdf" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Description" %}</a></li>
         <li><a href="{% url 'try' %}" rel="nofollow"><i class="glyphicon glyphicon-hand-right"></i> {% trans "Try" %}</a></li>
         <li>  <a href="http://www.irrigation-management.eu/forumx/irrigation-system-gr" target="_blank"> <i class="glyphicon glyphicon-list-alt"></i> {% trans "Forum" %}</a></li>
       </ul>
