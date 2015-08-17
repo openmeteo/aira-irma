@@ -47,6 +47,8 @@
 {% endblock %}
 
 {% block extramap %}
-            <a style="float: right;" class="btn btn-success btn-xs" target="_blank" href="http://system.irrigation-management.eu/"> {% trans "View Meteorogical Network Stations" %}</a> <br>
+    <div class="btn-grpoup">
+            <a style="float: right;" class="btn btn-success btn-xs" target="_blank" href="http://system.irrigation-management.eu/"> {% trans "View Meteorogical Network Stations" %}</a> 
             <a style="float: right;" class="btn btn-success btn-xs" href="{% url 'maps' %}"> {% trans "Maps from satellite images" %}</a>
+   </div>
 {% endblock %}

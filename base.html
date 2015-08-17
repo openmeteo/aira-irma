@@ -32,7 +32,12 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-cog"></i> {% trans "Management" %} <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="{% url 'home' user.username %}"  rel="nofollow"><i class="glyphicon glyphicon-leaf"></i> {% trans "My Fields" %}</a> </li>
-            <li><a href="{{ MEDIA_URL }}misc/description.pdf" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Description" %}</a></li>
+            {% get_current_language as LANGUAGE_CODE %}
+            {% if LANGUAGE_CODE = 'el' %}
+                <li><a href="http://www.irrigation-management.eu/63-irmasys-support-gr" target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
+            {% else %}
+                <li><a href="http://www.irrigation-management.eu/62-irmasys-support"  target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
+            {% endif %}
             {% if user.profile.id %}
                 <li><a href="{% url 'update_profile' user.profile.id  %}"><i class="glyphicon glyphicon-user"></i> {% trans "Account" %}</a></li>
             {% else %}
@@ -63,7 +68,6 @@
   {% csrf_token %}
   <input name="next" type="hidden" value="{{ redirect_to }}" />
   <select name="language">
-  {% get_current_language as LANGUAGE_CODE %}
   {% get_available_languages as LANGUAGES %}
   {% get_language_info_list for LANGUAGES as languages %}
   {% for language in languages %}

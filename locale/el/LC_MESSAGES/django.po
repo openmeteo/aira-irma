@@ -682,8 +682,8 @@ msgstr "Όροι Χρήσης"
 msgid "Disclaimer"
 msgstr "Αποποίηση ευθύνης"
 
-msgid "Description"
-msgstr "Περιγραφή"
+msgid "Support"
+msgstr "Υποστήριξη"
 
 msgid "Try"
 msgstr "Δοκιμή"
