@@ -102,3 +102,6 @@ msgstr ""
 #: aira-irma/base.html:125
 msgid "Terms of Use"
 msgstr "Όροι Χρήσης"
+
+msgid "Weather Forecast (ofidia.physics.uoi.gr)"
+msgstr "Πρόβλεψη καιρού (ofidia.physics.uoi.gr)"
