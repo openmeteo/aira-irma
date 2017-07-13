@@ -21,7 +21,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a style="max-width:100px; margin-top: -13px;" class="navbar-brand" href="{% url 'welcome' %}" ><img src="{% static 'img/IRMA_SYSLogo.png' %}" width="210"></a>
+      <div class="navbar-brand" style="width: 27em; font-size: 10pt; padding: 10px 5px"><p>{% trans "PARTICIPATORY SYSTEM FOR IRRIGATION ADVICE CONCERNING THE PLAIN OF ARTA" %}</p></div>
     </div>
     {% if user.is_authenticated %}
     <div class="navbar-collapse collapse">
