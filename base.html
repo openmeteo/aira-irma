@@ -34,9 +34,9 @@
             <li><a href="{% url 'home' user.username %}"  rel="nofollow"><i class="glyphicon glyphicon-leaf"></i> {% trans "My Fields" %}</a> </li>
             {% get_current_language as LANGUAGE_CODE %}
             {% if LANGUAGE_CODE = 'el' %}
-                <li><a href="http://www.irrigation-management.eu/63-irmasys-support-gr" target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
+                <li><a href="https://irma.irrigation-management.eu/forumx/irrigation-system-gr" target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
             {% else %}
-                <li><a href="http://www.irrigation-management.eu/62-irmasys-support"  target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
+                <li><a href="https://irma.irrigation-management.eu/forumx/irrigation-system"  target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
             {% endif %}
             {% if user.profile.id %}
                 <li><a href="{% url 'update_profile' user.profile.id  %}"><i class="glyphicon glyphicon-user"></i> {% trans "Account" %}</a></li>
@@ -53,13 +53,14 @@
     {% else %}
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://irma.irrigation-management.eu/">{% trans "About" %}</a></li>
         <li><a href="{% url 'django.contrib.auth.views.login' %}" rel="nofollow"><i class="glyphicon glyphicon-off"></i> {% trans "Login" %}</a></li>
         <li><a href="{% url 'registration_register' %}" rel="nofollow"><i class="glyphicon glyphicon-user"></i> {% trans "Register" %}</a></li>
         <li><a href="{% url 'password_reset' %}" rel="nofollow"><i class="glyphicon glyphicon-lock"></i> {% trans "Lost password?" %}</a></li>
         {% if LANGUAGE_CODE = 'el' %}
-            <li><a href="http://www.irrigation-management.eu/63-irmasys-support-gr" target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
+            <li><a href="https://irma.irrigation-management.eu/forumx/irrigation-system-gr" target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
         {% else %}
-            <li><a href="http://www.irrigation-management.eu/62-irmasys-support"  target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
+            <li><a href="https://irma.irrigation-management.eu/forumx/irrigation-system"  target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
         {% endif %}
             <li><a href="{% url 'try' %}" rel="nofollow"><i class="glyphicon glyphicon-hand-right"></i> {% trans "Try" %}</a></li>
             <li>  <a href="https://irma.irrigation-management.eu/forumx/index" target="_blank"> <i class="glyphicon glyphicon-list-alt"></i> {% trans "Forum" %}</a></li>
