@@ -39,7 +39,7 @@ msgid "Weather Forecast (ofidia.physics.uoi.gr)"
 msgstr "Πρόβλεψη καιρού (ofidia.physics.uoi.gr)"
 
 #: base.html:24
-msgid "PARTICIPATORY SYSTEM FOR IRRIGATION ADVICE CONCERNING THE PLAIN OF ARTA"
+msgid "PARTICIPATORY SYSTEM FOR IRRIGATION RECOMMENDATIONS (PLAIN OF ARTA)"
 msgstr "ΣΥΛΛΟΓΙΚΟ ΣΥΣΤΗΜΑ ΠΑΡΟΧΗΣ ΣΥΜΒΟΥΛΩΝ ΑΡΔΕΥΣΗΣ ΓΙΑ ΤΗΝ ΠΕΔΙΑΔΑ ΤΗΣ AΡΤΑΣ"
 
 #: base.html:29
