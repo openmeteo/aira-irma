@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-13 13:13+0300\n"
+"POT-Creation-Date: 2019-02-28 13:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,93 +18,95 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: aira/albedo_maps.html:6
+#: aira-irma/aira/albedo_maps.html:6
 msgid "Welcome "
 msgstr "Καλωσήρθατε"
 
-#: aira/index.html:39
-msgid "Previous"
-msgstr "Προηγούμενο"
-
-#: aira/index.html:43
-msgid "Next"
-msgstr "Επόμενο"
-
-#: aira/index.html:52
+#: aira-irma/aira/index.html:11
 msgid "View Meteorogical Network Stations"
 msgstr "Εμφάνιση Μετεωρολογικού Δικτύου"
 
-#: aira/index.html:57
+#: aira-irma/aira/index.html:16
 msgid "Weather Forecast (ofidia.physics.uoi.gr)"
 msgstr "Πρόβλεψη καιρού (ofidia.physics.uoi.gr)"
 
-#: base.html:24
+#: aira-irma/base.html:24
 msgid "PARTICIPATORY SYSTEM FOR IRRIGATION RECOMMENDATIONS (PLAIN OF ARTA)"
 msgstr "ΣΥΛΛΟΓΙΚΟ ΣΥΣΤΗΜΑ ΠΑΡΟΧΗΣ ΣΥΜΒΟΥΛΩΝ ΑΡΔΕΥΣΗΣ ΓΙΑ ΤΗΝ ΠΕΔΙΑΔΑ ΤΗΣ AΡΤΑΣ"
 
-#: base.html:29
+#: aira-irma/base.html:29
 msgid "Welcome"
 msgstr "Καλωσήρθατε"
 
-#: base.html:30 base.html.py:65
+#: aira-irma/base.html:30 aira-irma/base.html.py:66
 msgid "Forum"
 msgstr ""
 
-#: base.html:32
+#: aira-irma/base.html:32
 msgid "Management"
 msgstr "Διαχείριση"
 
-#: base.html:34
+#: aira-irma/base.html:34
 msgid "My Fields"
 msgstr "Τα Αγροτεμάχια μου"
 
-#: base.html:37 base.html.py:39 base.html.py:60 base.html.py:62
+#: aira-irma/base.html:37 aira-irma/base.html.py:39 aira-irma/base.html:61
+#: aira-irma/base.html.py:63
 msgid "Support"
 msgstr "Υποστήριξη"
 
-#: base.html:42 base.html.py:44
+#: aira-irma/base.html:42 aira-irma/base.html.py:44
 msgid "Account"
 msgstr "Λογαριασμός"
 
-#: base.html:46
+#: aira-irma/base.html:46
 msgid "Tools"
 msgstr "Μετατροπές"
 
-#: base.html:48
+#: aira-irma/base.html:48
 msgid "Logout"
 msgstr "Έξοδος"
 
-#: base.html:56
+#: aira-irma/base.html:56
+msgid "About"
+msgstr ""
+
+#: aira-irma/base.html:57
 msgid "Login"
 msgstr "Είσοδος"
 
-#: base.html:57
+#: aira-irma/base.html:58
 msgid "Register"
 msgstr "Εγγραφή"
 
-#: base.html:58
+#: aira-irma/base.html:59
 msgid "Lost password?"
 msgstr "Αλλαγή συνθηματικού"
 
-#: base.html:64
+#: aira-irma/base.html:65
 msgid "Try"
 msgstr "Δοκιμή"
 
-#: base.html:83
+#: aira-irma/base.html:84
 msgid "Go"
 msgstr "Μετάβαση"
 
-#: base.html:111
-msgid "Follow us"
-msgstr "Ακολούθησε μας"
+#: aira-irma/base.html:116
+msgid "University of Ioannina"
+msgstr "Πανεπιστήμιο Ιωαννίνων"
 
-#: base.html:119
-msgid "Copyright "
-msgstr ""
-
-#: base.html:125
+#: aira-irma/base.html:122
 msgid "Terms of Use"
 msgstr "Όροι Χρήσης"
+
+#~ msgid "Previous"
+#~ msgstr "Προηγούμενο"
+
+#~ msgid "Next"
+#~ msgstr "Επόμενο"
+
+#~ msgid "Follow us"
+#~ msgstr "Ακολούθησε μας"
 
 #~ msgid "Maps from satellite images"
 #~ msgstr "Χάρτες από δορυφορικές εικόνες"
