@@ -104,7 +104,16 @@
     </div>
     <hr>
     <div class="container text-center">
-        <p><a href="{% url 'terms' %}">{% trans "Terms of Use" %}</a></p>
+        {% get_current_language as LANGUAGE_CODE %}
+        <p>
+        <a href="{% url 'terms' %}">{% trans "Terms of Use" %}</a>
+        |
+        {% if LANGUAGE_CODE = 'el' %}
+          <a href="https://irma.irrigation-management.eu/images/Documents/IRMA_DSS_Arta_GR.pdf">Πληροφορίες παλιάς έκδοσης</a>
+        {% else %}
+          <a href="https://irma.irrigation-management.eu/images/Documents/IRMA_DSS_Arta_ENG.pdf">Old version info</a>
+        {% endif %}
+        </p>
     </div>
   </div>
 {% endblock %}
