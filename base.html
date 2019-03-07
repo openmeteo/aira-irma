@@ -27,17 +27,12 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{% url 'home' user.username %}"><b>{% trans "Welcome" %}:</b> {{ user.username }}</a></li>
-        <li><a href="http://www.irrigation-management.eu/forumx/irrigation-system-gr" target="_blank"> <i class="glyphicon glyphicon-list-alt"></i> {% trans "Forum" %}</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-cog"></i> {% trans "Management" %} <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="{% url 'home' user.username %}"  rel="nofollow"><i class="glyphicon glyphicon-leaf"></i> {% trans "My Fields" %}</a> </li>
             {% get_current_language as LANGUAGE_CODE %}
-            {% if LANGUAGE_CODE = 'el' %}
-                <li><a href="https://irma.irrigation-management.eu/forumx/irrigation-system-gr" target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
-            {% else %}
-                <li><a href="https://irma.irrigation-management.eu/forumx/irrigation-system"  target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
-            {% endif %}
+            <li><a href="https://www.irrigation-management.eu/operational-stuff/deliverables-ir2ma-pb1/10-static-articles/12-helpdesk"  target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
             {% if user.profile.id %}
                 <li><a href="{% url 'update_profile' user.profile.id  %}"><i class="glyphicon glyphicon-user"></i> {% trans "Account" %}</a></li>
             {% else %}
@@ -53,17 +48,11 @@
     {% else %}
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://irma.irrigation-management.eu/">{% trans "About" %}</a></li>
         <li><a href="{% url 'django.contrib.auth.views.login' %}" rel="nofollow"><i class="glyphicon glyphicon-off"></i> {% trans "Login" %}</a></li>
         <li><a href="{% url 'registration_register' %}" rel="nofollow"><i class="glyphicon glyphicon-user"></i> {% trans "Register" %}</a></li>
         <li><a href="{% url 'password_reset' %}" rel="nofollow"><i class="glyphicon glyphicon-lock"></i> {% trans "Lost password?" %}</a></li>
-        {% if LANGUAGE_CODE = 'el' %}
-            <li><a href="https://irma.irrigation-management.eu/forumx/irrigation-system-gr" target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
-        {% else %}
-            <li><a href="https://irma.irrigation-management.eu/forumx/irrigation-system"  target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
-        {% endif %}
+        <li><a href="https://www.irrigation-management.eu/operational-stuff/deliverables-ir2ma-pb1/10-static-articles/12-helpdesk"  target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
             <li><a href="{% url 'try' %}" rel="nofollow"><i class="glyphicon glyphicon-hand-right"></i> {% trans "Try" %}</a></li>
-            <li>  <a href="https://irma.irrigation-management.eu/forumx/index" target="_blank"> <i class="glyphicon glyphicon-list-alt"></i> {% trans "Forum" %}</a></li>
       </ul>
     </div>
     {% endif %}
@@ -98,29 +87,24 @@
 
 
 {% block footer %}
-  <div class="container">
+  <div class="container text-center">
     <hr>
     <div class="row">
-      <div class="col-md-4" style="text-align: center">
-        <a href="http://www.greece-italy.eu" target="_blank"><img style="border: 0px solid #000000;" src="http://www.irrigation-management.eu/images/site-images/static/interreg.jpg" alt="interreg" width="279" height="83" /></a>
-      </div>
-      <div class="col-md-4" style="text-align: center">
-        <a href="http://www.irrigation-management.eu/" target="_blank"><img src="{% static 'img/IRMAwebsiteLogo.png' %}" width="500" height="83" class="img-responsive" alt="Irrigation Management Eu"></a>
-      </div>
-      <div class="col-md-4">
-      </div>
+        <div class="col-xs-4">
+          <a href="http://www.greece-italy.eu" target="_blank"><img class="img-responsive" src="https://www.irrigation-management.eu/images/IR2MA/logos/Interreg_GR_IT.png" alt="interreg" width="300" height="87"/></a>
+        </div>
+        <div class="col-xs-4">
+        </div>
+        <div class="col-xs-4">
+          <a href="http://www.irrigation-management.eu/" target="_blank">IR2MA
+              - Large Scale Irrigation Management Tools for Sustainable Water
+              Management in Rural Areas and Protection of Receiving Aquatic
+          Ecosystems</a>
+        </div>
     </div>
     <hr>
-    <div class="row">
-      <div class="col-md-4">
-        <p class="text-success">© 2018-2020 <a href="https://www.uoi.gr/">{% trans "University of Ioannina" %}</a></p>
-      </div>
-      <div class="col-md-4">
-
-      </div>
-      <div class="col-md-4">
-      <a style="float:left;padding-right: 20px;" href="{% url 'terms' %}"><p>{% trans "Terms of Use" %}</p></a>
-      </div>
+    <div class="container text-center">
+        <p><a href="{% url 'terms' %}">{% trans "Terms of Use" %}</a></p>
     </div>
   </div>
 {% endblock %}
