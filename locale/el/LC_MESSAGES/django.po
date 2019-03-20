@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-28 13:02+0200\n"
+"POT-Creation-Date: 2019-03-20 12:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,86 +18,85 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: aira-irma/aira/albedo_maps.html:6
+#: aira/albedo_maps.html:6
 msgid "Welcome "
 msgstr "Καλωσήρθατε"
 
-#: aira-irma/aira/index.html:11
+#: aira/index.html:11
 msgid "View Meteorogical Network Stations"
 msgstr "Εμφάνιση Μετεωρολογικού Δικτύου"
 
-#: aira-irma/aira/index.html:16
+#: aira/index.html:16
 msgid "Weather Forecast (ofidia.physics.uoi.gr)"
 msgstr "Πρόβλεψη καιρού (ofidia.physics.uoi.gr)"
 
-#: aira-irma/base.html:24
+#: base.html:23
 msgid "PARTICIPATORY SYSTEM FOR IRRIGATION RECOMMENDATIONS (PLAIN OF ARTA)"
 msgstr "ΣΥΛΛΟΓΙΚΟ ΣΥΣΤΗΜΑ ΠΑΡΟΧΗΣ ΣΥΜΒΟΥΛΩΝ ΑΡΔΕΥΣΗΣ ΓΙΑ ΤΗΝ ΠΕΔΙΑΔΑ ΤΗΣ AΡΤΑΣ"
 
-#: aira-irma/base.html:29
+#: base.html:28
 msgid "Welcome"
 msgstr "Καλωσήρθατε"
 
-#: aira-irma/base.html:30 aira-irma/base.html.py:66
-msgid "Forum"
-msgstr ""
-
-#: aira-irma/base.html:32
+#: base.html:30
 msgid "Management"
 msgstr "Διαχείριση"
 
-#: aira-irma/base.html:34
+#: base.html:32
 msgid "My Fields"
 msgstr "Τα Αγροτεμάχια μου"
 
-#: aira-irma/base.html:37 aira-irma/base.html.py:39 aira-irma/base.html:61
-#: aira-irma/base.html.py:63
+#: base.html:34 base.html.py:53
 msgid "Support"
 msgstr "Υποστήριξη"
 
-#: aira-irma/base.html:42 aira-irma/base.html.py:44
+#: base.html:36 base.html.py:38
 msgid "Account"
 msgstr "Λογαριασμός"
 
-#: aira-irma/base.html:46
+#: base.html:40
 msgid "Tools"
 msgstr "Μετατροπές"
 
-#: aira-irma/base.html:48
+#: base.html:42
 msgid "Logout"
 msgstr "Έξοδος"
 
-#: aira-irma/base.html:56
-msgid "About"
-msgstr ""
-
-#: aira-irma/base.html:57
+#: base.html:50
 msgid "Login"
 msgstr "Είσοδος"
 
-#: aira-irma/base.html:58
+#: base.html:51
 msgid "Register"
 msgstr "Εγγραφή"
 
-#: aira-irma/base.html:59
+#: base.html:52
 msgid "Lost password?"
 msgstr "Αλλαγή συνθηματικού"
 
-#: aira-irma/base.html:65
+#: base.html:54
 msgid "Try"
 msgstr "Δοκιμή"
 
-#: aira-irma/base.html:84
+#: base.html:72
 msgid "Go"
 msgstr "Μετάβαση"
 
-#: aira-irma/base.html:116
-msgid "University of Ioannina"
-msgstr "Πανεπιστήμιο Ιωαννίνων"
+#: base.html:102
+msgid ""
+"Project co-funded by the European Union, the European Regional Development "
+"Fund (E.R.D.F.) and by National Funds of Greece and Italy"
+msgstr ""
+"Έργο συγχρηματοδοτούμενο από την Ευρωπαϊκή Ένωση, το Ευρωπαϊκό Ταμείο "
+"Περιφερειακής Ανάπτυξης (Ε.Τ.Π.Α.) και την Εθνική Συμμετοχή των χωρών "
+"Ελλάδας και Ιταλίας"
 
-#: aira-irma/base.html:122
+#: base.html:109
 msgid "Terms of Use"
 msgstr "Όροι Χρήσης"
+
+#~ msgid "University of Ioannina"
+#~ msgstr "Πανεπιστήμιο Ιωαννίνων"
 
 #~ msgid "Previous"
 #~ msgstr "Προηγούμενο"
