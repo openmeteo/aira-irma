@@ -39,7 +39,7 @@
             {% endif %}
             <li><a href="{% url 'tools' %}"><i class="glyphicon glyphicon-wrench"></i> {% trans "Tools" %}</a></li>
             <li class="divider"></li>
-            <li><a href="{% url 'django.contrib.auth.views.logout' %}"> <i class="glyphicon glyphicon-log-out"></i> {% trans "Logout" %} </a></li>
+            <li><a href="{% url 'auth_logout' %}"> <i class="glyphicon glyphicon-log-out"></i> {% trans "Logout" %} </a></li>
           </ul>
         </li>
       </ul>
@@ -47,9 +47,9 @@
     {% else %}
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{% url 'django.contrib.auth.views.login' %}" rel="nofollow"><i class="glyphicon glyphicon-off"></i> {% trans "Login" %}</a></li>
+        <li><a href="{% url 'auth_login' %}" rel="nofollow"><i class="glyphicon glyphicon-off"></i> {% trans "Login" %}</a></li>
         <li><a href="{% url 'registration_register' %}" rel="nofollow"><i class="glyphicon glyphicon-user"></i> {% trans "Register" %}</a></li>
-        <li><a href="{% url 'password_reset' %}" rel="nofollow"><i class="glyphicon glyphicon-lock"></i> {% trans "Lost password?" %}</a></li>
+        <li><a href="{% url 'auth_password_reset' %}" rel="nofollow"><i class="glyphicon glyphicon-lock"></i> {% trans "Lost password?" %}</a></li>
         <li><a href="https://www.interregir2ma.eu/operational-stuff/deliverables-ir2ma-pb1/10-static-articles/12-helpdesk"  target="_blank" rel="nofollow"><i class="glyphicon glyphicon-book"></i> {% trans "Support" %}</a></li>
             <li><a href="{% url 'try' %}" rel="nofollow"><i class="glyphicon glyphicon-hand-right"></i> {% trans "Try" %}</a></li>
       </ul>
@@ -108,7 +108,7 @@
         <p>
         <a href="{% url 'terms' %}">{% trans "Terms of Use" %}</a>
         |
-        {% if LANGUAGE_CODE = 'el' %}
+        {% if LANGUAGE_CODE == 'el' %}
           <a href="https://irma.interregir2ma.eu/images/Documents/IRMA_DSS_Arta_GR.pdf">Πληροφορίες έκδοσης 2015 (IRMA)</a>
         {% else %}
           <a href="https://irma.interregir2ma.eu/images/Documents/IRMA_DSS_Arta_ENG.pdf">Info about version 2015 (IRMA)</a>
