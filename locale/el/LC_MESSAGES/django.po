@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-20 12:08+0200\n"
+"POT-Creation-Date: 2019-09-04 12:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,10 +23,14 @@ msgid "Welcome "
 msgstr "Καλωσήρθατε"
 
 #: aira/index.html:11
-msgid "View Meteorogical Network Stations"
-msgstr "Εμφάνιση Μετεωρολογικού Δικτύου"
+msgid "Agrometeorological stations network"
+msgstr "Δίκτυο αγρομετεωρολογικών σταθμών"
 
-#: aira/index.html:16
+#: aira/index.html:14
+msgid "Data"
+msgstr "Δεδομένα"
+
+#: aira/index.html:17
 msgid "Weather Forecast (ofidia.physics.uoi.gr)"
 msgstr "Πρόβλεψη καιρού (ofidia.physics.uoi.gr)"
 
@@ -46,11 +50,11 @@ msgstr "Διαχείριση"
 msgid "My Fields"
 msgstr "Τα Αγροτεμάχια μου"
 
-#: base.html:34 base.html.py:53
+#: base.html:34 base.html:53
 msgid "Support"
 msgstr "Υποστήριξη"
 
-#: base.html:36 base.html.py:38
+#: base.html:36 base.html:38
 msgid "Account"
 msgstr "Λογαριασμός"
 
@@ -94,18 +98,3 @@ msgstr ""
 #: base.html:109
 msgid "Terms of Use"
 msgstr "Όροι Χρήσης"
-
-#~ msgid "University of Ioannina"
-#~ msgstr "Πανεπιστήμιο Ιωαννίνων"
-
-#~ msgid "Previous"
-#~ msgstr "Προηγούμενο"
-
-#~ msgid "Next"
-#~ msgstr "Επόμενο"
-
-#~ msgid "Follow us"
-#~ msgstr "Ακολούθησε μας"
-
-#~ msgid "Maps from satellite images"
-#~ msgstr "Χάρτες από δορυφορικές εικόνες"
