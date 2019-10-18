@@ -1,11 +1,12 @@
-{% extends 'aira/index-default.html' %}
+{% extends 'aira/frontpage/main-default.html' %}
 {% load static %}
 {% load i18n %}
+
 
 {% block title %}IR2MA{% endblock %}
 
 
-{% block extramap %}
+{% block map_footer %}
   <div class="row">
     <div class="col-xs-4 text-left">
       <a class="btn btn-success btn-xs" target="_blank" href="http://addvantage.interregir2ma.eu:8080/livedata/mapOrList.jsf"> {% trans "Agrometeorological stations network" %}</a>
