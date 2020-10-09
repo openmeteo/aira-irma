@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-04 12:52+0300\n"
+"POT-Creation-Date: 2020-02-20 15:18+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,75 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: aira/albedo_maps.html:6
-msgid "Welcome "
-msgstr "Καλωσήρθατε"
-
-#: aira/index.html:11
-msgid "Agrometeorological stations network"
-msgstr "Δίκτυο αγρομετεωρολογικών σταθμών"
-
-#: aira/index.html:14
-msgid "Data"
-msgstr "Δεδομένα"
-
-#: aira/index.html:17
-msgid "Weather Forecast (ofidia.physics.uoi.gr)"
-msgstr "Πρόβλεψη καιρού (ofidia.physics.uoi.gr)"
-
-#: base.html:23
-msgid "PARTICIPATORY SYSTEM FOR IRRIGATION RECOMMENDATIONS (PLAIN OF ARTA)"
-msgstr "ΣΥΛΛΟΓΙΚΟ ΣΥΣΤΗΜΑ ΠΑΡΟΧΗΣ ΣΥΜΒΟΥΛΩΝ ΑΡΔΕΥΣΗΣ ΓΙΑ ΤΗΝ ΠΕΔΙΑΔΑ ΤΗΣ AΡΤΑΣ"
-
-#: base.html:28
-msgid "Welcome"
-msgstr "Καλωσήρθατε"
-
-#: base.html:30
-msgid "Management"
-msgstr "Διαχείριση"
-
-#: base.html:32
-msgid "My Fields"
-msgstr "Τα Αγροτεμάχια μου"
-
-#: base.html:34 base.html:53
-msgid "Support"
-msgstr "Υποστήριξη"
-
-#: base.html:36 base.html:38
-msgid "Account"
-msgstr "Λογαριασμός"
-
-#: base.html:40
-msgid "Tools"
-msgstr "Μετατροπές"
-
-#: base.html:42
-msgid "Logout"
-msgstr "Έξοδος"
-
-#: base.html:50
-msgid "Login"
-msgstr "Είσοδος"
-
-#: base.html:51
-msgid "Register"
-msgstr "Εγγραφή"
-
-#: base.html:52
-msgid "Lost password?"
-msgstr "Αλλαγή συνθηματικού"
-
-#: base.html:54
-msgid "Try"
-msgstr "Δοκιμή"
-
-#: base.html:72
-msgid "Go"
-msgstr "Μετάβαση"
-
-#: base.html:102
+#: aira/base/main.html:26
 msgid ""
 "Project co-funded by the European Union, the European Regional Development "
 "Fund (E.R.D.F.) and by National Funds of Greece and Italy"
@@ -95,6 +27,26 @@ msgstr ""
 "Περιφερειακής Ανάπτυξης (Ε.Τ.Π.Α.) και την Εθνική Συμμετοχή των χωρών "
 "Ελλάδας και Ιταλίας"
 
-#: base.html:109
-msgid "Terms of Use"
-msgstr "Όροι Χρήσης"
+#: aira/base/main.html:33
+msgid "Terms of use"
+msgstr "Όροι χρήσης"
+
+#: aira/base/navbar.html:6
+msgid "Support"
+msgstr "Υποστήριξη"
+
+#: aira/base/navbar.html:11
+msgid "PARTICIPATORY SYSTEM FOR IRRIGATION RECOMMENDATIONS (PLAIN OF ARTA)"
+msgstr "ΣΥΛΛΟΓΙΚΟ ΣΥΣΤΗΜΑ ΠΑΡΟΧΗΣ ΣΥΜΒΟΥΛΩΝ ΑΡΔΕΥΣΗΣ ΓΙΑ ΤΗΝ ΠΕΔΙΑΔΑ ΤΗΣ AΡΤΑΣ"
+
+#: aira/frontpage/main.html:9
+msgid "Agrometeorological stations network"
+msgstr "Δίκτυο αγρομετεωρολογικών σταθμών"
+
+#: aira/frontpage/main.html:12
+msgid "Data"
+msgstr "Δεδομένα"
+
+#: aira/frontpage/main.html:15
+msgid "Weather forecast (ofidia.physics.uoi.gr)"
+msgstr "Πρόβλεψη καιρού (ofidia.physics.uoi.gr)"

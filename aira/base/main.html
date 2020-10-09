@@ -7,6 +7,8 @@
 {% endblock %}
 
 
+{% block extratitle %} — IR2MA{% endblock %}
+
 {% block footer %}
   <div class="container text-center">
     <hr>
@@ -28,7 +30,7 @@
     <div class="container text-center">
         {% get_current_language as LANGUAGE_CODE %}
         <p>
-        <a href="{% url 'terms' %}">{% trans "Terms of Use" %}</a>
+        <a href="{% url 'terms' %}">{% trans "Terms of use" %}</a>
         |
         {% if LANGUAGE_CODE == 'el' %}
           <a href="http://www.irrigation-management.eu/images/Documents/IRMA_DSS_Arta_GR.pdf">Πληροφορίες έκδοσης 2015 (IRMA)</a>
