@@ -30,6 +30,8 @@
     <div class="container text-center">
         {% get_current_language as LANGUAGE_CODE %}
         <p>
+        {% include "aira/base/language_switcher.html" %}
+        |
         <a href="{% url 'terms' %}">{% trans "Terms of use" %}</a>
         |
         {% if LANGUAGE_CODE == 'el' %}
