@@ -7,7 +7,14 @@
 {% endblock %}
 
 
+{% block cssmain %}
+  <link href="{% static 'css/bootstrap-superhero.min.css' %}" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css">
+{% endblock %}
+
+
 {% block extratitle %} — IR2MA{% endblock %}
+
 
 {% block footer %}
   <div class="container text-center">
@@ -30,6 +37,8 @@
     <div class="container text-center">
         {% get_current_language as LANGUAGE_CODE %}
         <p>
+        {% include "aira/base/language_switcher.html" %}
+        |
         <a href="{% url 'terms' %}">{% trans "Terms of use" %}</a>
         |
         {% if LANGUAGE_CODE == 'el' %}
