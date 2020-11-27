@@ -2,11 +2,15 @@
 {% load i18n %}
 
 
+{% block navbar_styles %}
+  navbar-dark bg-dark
+{% endblock %}
+
 {% block support_link %}
-  <li><a href="https://www.interregir2ma.eu/operational-stuff/deliverables-ir2ma-pb1/10-static-articles/12-helpdesk"  target="_blank" rel="nofollow">{% trans "Support" %}</a></li>
+  <li class="nav-item"><a class="nav-link" href="https://www.interregir2ma.eu/operational-stuff/deliverables-ir2ma-pb1/10-static-articles/12-helpdesk"  target="_blank" rel="nofollow">{% trans "Support" %}</a></li>
 {% endblock %}
 
 
 {% block navbar_brand %}
-  <a href="/" class="navbar-brand" style="min-height: 60px; width: 25em; font-size: 10pt; padding-top: 10px; padding-bottom: 10px; color: white">{% trans "PARTICIPATORY SYSTEM FOR IRRIGATION RECOMMENDATIONS (PLAIN OF ARTA)" %}</a>
+  <a href="/" class="navbar-brand" style="white-space: normal; min-height: 60px; width: 25em; font-size: 10pt; padding-top: 10px; padding-bottom: 10px; color: white">{% trans "PARTICIPATORY SYSTEM FOR IRRIGATION RECOMMENDATIONS (PLAIN OF ARTA)" %}</a>
 {% endblock %}
